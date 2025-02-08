@@ -20,12 +20,10 @@
             </ul>
         </nav>
     </header>
-    <h1>VidSeek</h1>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
         </script>
-
     <script>
         $.ajax({
             method: "GET",
@@ -34,12 +32,8 @@
             headers: { Authorization: "KakaoAK 37b92cff501a223ca16438d73de039c8" }
         })
             .done(function (msg) {
-                console.log(msg.documents[0].title);
-                console.log(msg.documents[0].url);
-                console.log(msg.documents[0].datetime);
-                console.log(msg.documents[0].play_time);
-                console.log(msg.documents[0].thumbnail);
-                console.log(msg.documents[0].author);
+                $("p").append("<strong>" + msg.documents[0].title + "</strong>");
+                $("p").append("<strong>" + msg.documents[0].url + "</strong>");
             });
     </script>
 </body>
